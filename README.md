@@ -27,3 +27,28 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 * chrome - https://www.google.co.uk/chrome/browser/desktop/
 * dropbox - https://www.dropbox.com/install
 * ripgrep - https://github.com/BurntSushi/ripgrep/releases
+
+
+## PG setup
+
+Login to the postgres server
+
+    sudo -u postgres psql postgres
+
+Change the password for the "postgres" user
+
+    \password postgres
+
+(then enter the password twice)
+
+Exit postgres with `ctrl + d`.
+
+You can avoid having to enter the password for postgres by setting up a default password
+
+    echo "localhost:5432:*:postgres:<password>" >> .pgpass
+    chmod 600 .pgpass
+
+You can then connect to the database
+
+    psql -h localhost -U postgres
+    \q

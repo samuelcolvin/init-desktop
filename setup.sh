@@ -18,7 +18,7 @@ apt install -y vim chromium-browser unzip gparted synaptic
 apt install -y python3-pip libpython3-dev python3-dev
 
 # postgresql
-apt install -y postgresql-client postgresql postgresql-contrib redis-server
+apt install -y postgresql-client postgresql postgresql-contrib postgresql-server-dev-all
 # redis
 apt install -y redis-server
 # general libs
