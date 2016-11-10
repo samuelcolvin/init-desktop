@@ -6,7 +6,7 @@ alias gl="git log2"
 alias gb="git branch2"
 alias gm="git checkout master"
 alias gp="git pull"
-alias cl="lines=`tput lines`;lines=`expr $lines - 1`;for i in `seq 1 $lines`; do printf '\n'; done"
+alias cl="clean_terminal.sh"
 alias oman="helpmanual.py"
 export PATH=~/bin:$PATH
 
