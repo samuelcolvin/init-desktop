@@ -11,8 +11,10 @@ wget $repo/bash_extra
 echo ". bash_extra" >> .bashrc
 . .bashrc
 
-wget $repo/helpmanual.py bin/ && chmod a+x bin/helpmanual.py
-wget $repo/clean_terminal.sh bin/ && chmod a+x bin/clean_terminal.sh
+mkdir -p bin
+cd bin
+wget $repo/helpmanual.py && chmod a+x helpmanual.py
+wget $repo/clean_terminal.sh && chmod a+x clean_terminal.sh
 ```
 
 ## best installed manually:
