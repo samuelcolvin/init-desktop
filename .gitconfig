@@ -1,0 +1,18 @@
+[user]
+	email = s@muelcolvin.com
+	name = Samuel Colvin
+[core]
+	editor = vim
+[push]
+	default = simple
+[alias]
+	pushf = push --force-with-lease
+	commend = commit --amend --no-edit
+	log2 = log --graph --abbrev-commit --decorate --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+	log2-all = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+	branch2 = for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(HEAD) %(align:40,left)%(color:yellow)%(refname:short)%(color:reset)%(end) (%(color:green)%(committerdate:relative)%(color:reset)) %(contents:subject)'
+	branch2-all = for-each-ref --count=20 --sort=-committerdate refs/remotes/ --format='%(HEAD) %(align:50,left)%(color:yellow)%(refname:short)%(color:reset)%(end) (%(color:green)%(committerdate:relative)%(color:reset)) %(contents:subject)'
+	unstage = reset HEAD
+	branch-name = rev-parse --abbrev-ref HEAD
+	force-publish = "! git push --set-upstream origin $(git branch-name)"
+	publish = "! if [ \"$(git branch-name)\" != \"master\" ]; then git force-publish; else echo 'on master, not publishing' && exit 1; fi"
