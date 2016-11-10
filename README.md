@@ -8,7 +8,7 @@ sudo bash setup.sh
 
 wget $repo/.gitconfig
 wget $repo/bash_extra
-echo ". bash_extra" >> .bashrc
+echo ". ~/bash_extra" >> .bashrc
 . .bashrc
 
 mkdir -p bin
