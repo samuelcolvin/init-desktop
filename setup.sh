@@ -10,10 +10,10 @@ apt update
 apt upgrade
 
 # from above
-apt install -y git atom pycharm landscape-common gdebi curl
+apt install -y git atom pycharm
 
 # general
-apt install -y vim chromium-browser unzip gparted synaptic
+apt install -y vim chromium-browser unzip gparted synaptic landscape-common gdebi curl whois
 # python
 apt install -y python3-pip libpython3-dev python3-dev
 
@@ -24,7 +24,7 @@ apt install -y redis-server
 # general libs
 apt install -y libjpeg-dev libfreetype6-dev libffi-dev libsqlite3-dev
 # compiz
-apt install -y compizconfig-settings-manager compiz-plugins compiz-plugins-extra unity-tweak-tool
+# apt install -y compizconfig-settings-manager compiz-plugins compiz-plugins-extra unity-tweak-tool
 # pip updates
 pip install -U pip setuptools virtualenv ipython
 
