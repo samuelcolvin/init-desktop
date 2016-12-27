@@ -18,7 +18,9 @@ except ImportError:
 def get_browser_opener():
     system = platform.system()
     if system == 'Linux':
-        return 'gnome-open'  # what about linux without gnome?
+        # what about linux without gnome?
+        # on some version this should be `gnome-open`
+        return 'gvfs-open'
     elif system == 'Windows':
         return 'start chrome'  # random guess, I don't much care
     else:
