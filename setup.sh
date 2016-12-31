@@ -23,6 +23,9 @@ apt install -y postgresql-client postgresql postgresql-contrib postgresql-server
 apt install -y redis-server
 # general libs
 apt install -y libjpeg-dev libfreetype6-dev libffi-dev libsqlite3-dev
+# recommended by pyenv
+apt install -y libbz2-dev libreadline-dev llvm libncurses5-dev libncursesw5-dev
+
 # compiz
 # apt install -y compizconfig-settings-manager compiz-plugins compiz-plugins-extra unity-tweak-tool
 # pip updates
