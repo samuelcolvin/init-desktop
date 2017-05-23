@@ -1,5 +1,7 @@
 # Setup Desktop Environment
 
+Mostly written for Ubuntu but much should work any OS.
+
 ```bash
 cd ~
 export repo=https://raw.githubusercontent.com/samuelcolvin/init-desktop/master
@@ -17,16 +19,29 @@ mkdir -p bin
 cd bin
 wget $repo/helpmanual.py && chmod a+x helpmanual.py
 wget $repo/clean_terminal.sh && chmod a+x clean_terminal.sh
+wget $repo/paste.sh && chmod a+x paste.sh
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 ```
 
+## curlrc
+
+Basic curlrc file (`~/.curlrc`):
+
+    -w "\nstatus=%{http_code} %{redirect_url} size=%{size_download} time=%{time_total} content-type=\"%{content_type}\"\n"
+
+To add ansi colours download `make_curlrc.py` and with `click` installed, call
+
+    ./make_curlrc.py
+
 ## best installed manually:
 
 * chrome - https://www.google.co.uk/chrome/browser/desktop/
+* chromedriver - https://sites.google.com/a/chromium.org/chromedriver/ (put in `~/bin`)
 * dropbox - https://www.dropbox.com/install
 * ripgrep - https://github.com/BurntSushi/ripgrep/releases
+* pycharm - https://www.jetbrains.com/pycharm/
 
 
 ## PG setup

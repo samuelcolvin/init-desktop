@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
 # git
 apt-add-repository ppa:git-core/ppa -y
-# atom
-apt-add-repository ppa:webupd8team/atom -y
-# pycharm
-apt-add-repository ppa:mystic-mirage/pycharm -y
 
 apt update
 apt upgrade
 
 # from above
-apt install -y git atom pycharm
+apt install -y git
 
 # general
 apt install -y vim chromium-browser unzip gparted synaptic landscape-common gdebi curl whois
