@@ -1,5 +1,7 @@
 # Setup Desktop Environment
 
+https://gist.github.com/samuelcolvin/f9661209ab72cb0ed3148b8b3edc55d4
+
 Mostly written for Ubuntu but much should work any OS.
 
 ```bash
