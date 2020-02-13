@@ -44,6 +44,10 @@ To add ansi colours download `make_curlrc.py` and with `click` installed, call
 * dropbox - https://www.dropbox.com/install
 * ripgrep - https://github.com/BurntSushi/ripgrep/releases
 * pycharm - https://www.jetbrains.com/pycharm/
+* speedtest - https://github.com/sivel/speedtest-cli
+* httpie
+* rust
+* docker
 
 
 ## PG setup

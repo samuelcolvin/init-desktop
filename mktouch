@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+FILE_PATH=$1
+mkdir -p `dirname $FILE_PATH`
+touch $FILE_PATH

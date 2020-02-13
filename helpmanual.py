@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Open helpmanual.io man pages
 Samuel Colvin 2016
@@ -32,7 +32,7 @@ def helpmanual():
     if not args:
         return 'No arguments supplied, usage: "{} <search string>"'.format(sys.argv[0])
     c = HTTPSConnection('search.helpmanual.io')
-    c.request('GET', '/' + args)
+    c.request('GET', '/q/' + args)
     r = c.getresponse()
     if not r.status == 200:
         return 'Connection error {}: {}'.format(r.status, r.reason)

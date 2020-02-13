@@ -1,0 +1,53 @@
+#!/usr/bin/env python3.6
+import os
+import subprocess
+import sys
+from pathlib import Path
+import tinify
+
+# TODO find a way to check if files have already been tinified before processing
+tinify.key = os.getenv('TINIFY_KEY')
+if not tinify.key:
+    raise RuntimeError('"TINIFY_KEY" environment variable not set, got to https://tinypng.com/developers')
+
+
+def tinify_file(path: Path, force=False):
+    assert path.is_file(), 'file does not exist'
+    p = subprocess.run(['identify', '-verbose', str(path.resolve())],
+                       check=True, stdout=subprocess.PIPE, encoding='utf8')
+    if 'Units: Undefined' in p.stdout:
+        print(f'{path} already tinified')
+        if not force:
+            return False
+    print(f'tinifing {path}...')
+    source = tinify.from_file(str(path))
+    source.to_file(str(path))
+    return True
+
+
+def tinify_dir(p: Path):
+    assert p.is_dir(), 'not a directory'
+    print(f'tinifing files in "{p}"...')
+    tinified, skipped = 0, 0
+    for g in ('**/*.png', '**/*.jpeg', '**/*.jpg'):
+        for f in p.glob(g):
+            if tinify_file(f):
+                tinified += 1
+            else:
+                skipped += 1
+    print(f'\ntinified={tinified} skipped={skipped}')
+
+
+def main(p: Path, force: bool):
+    if p.is_dir():
+        tinify_dir(p)
+    else:
+        tinify_file(p, force)
+
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        main(Path(sys.argv[1]), '--force' in sys.argv)
+    else:
+        print('usage "./tinify path/to/image.png"')
+        sys.exit(1)
